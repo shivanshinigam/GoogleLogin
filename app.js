@@ -12,52 +12,21 @@ window.onload = function() {
     );
     };
         
-    function handleLogin(response) {
+function handleLogin(response) {
     const user = parseJwt(response.credential);
 
-    $('#userName').text(user.name);
-    $('#userEmail').text(user.email);
+    sessionStorage.setItem('googleUser', JSON.stringify(user));
 
-    if (user.picture) {
-        $('#userImage')
-            .attr('src', user.picture)
-            .show();
-    }
-    
-    else {
-    const firstLetter = user.name ? user.name.charAt(0).toUpperCase() : 'U';
-    $('#userImage').replaceWith(`
-    <div id="userImage" style="
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #4caf50;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 20px;
-    ">${firstLetter}</div>
-    `);
-    }
-    $('h3').hide();
-    $('#userInfo').show();
-    $('#buttonDiv').hide();
+    window.location.href = 'home.html';
 }
 
-        
-    function parseJwt(token) {
-        const base64Url = token.split('.')[1];
-        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        const jsonPayload = decodeURIComponent(atob(base64).split('').map(c => 
-                '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
-            ).join(''));
-            return JSON.parse(jsonPayload);
+function parseJwt(token) {
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(
+        atob(base64).split('').map(c =>
+            '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
+        ).join('')
+    );
+    return JSON.parse(jsonPayload);
 }
-        
-    function signOut() {
-            $('#userInfo').hide();
-            $('#buttonDiv').show();
-            $('h3').show();
-        }
