@@ -14,7 +14,7 @@ A futuristic, cyber-themed authentication interface featuring Google Sign-In. Th
 
 | Login Portal | Sign In | Player Profile |
 |:---:|:---:|:---:|
-| <img src="https://github.com/user-attachments/assets/83ad60fb-464a-48cf-8401-09c6140744a4" alt="Login Portal" width="300"/> | <img src="https://github.com/user-attachments/assets/5f095b04-4e98-4e50-9e06-4d9c2cc5d7c6" alt="Sign In" width="300"/> | <img src="https://github.com/user-attachments/assets/3b7528a2-5e8a-478e-870f-aec9198054c1" alt="Player Profile" width="300"/> |
+| <img src="assets/enter_game.png" alt="Login Portal" width="300"/> | <img src="assets/signin_prompt.png" alt="Sign In" width="300"/> | <img src="assets/player_profile.png" alt="Player Profile" width="300"/> |
 
 
 ## 🚀 How to Run
