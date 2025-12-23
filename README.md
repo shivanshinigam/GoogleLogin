@@ -12,11 +12,12 @@ A futuristic, cyber-themed authentication interface featuring Google Sign-In. Th
 
 ## 📸 Screenshots
 
-| Login Portal | Sign In | Player Profile |
-|:---:|:---:|:---:|
-| ![Login Screen](screenshots/login_screen.png) | ![Google Sign-In](screenshots/signin_prompt.png) | ![Player Profile](screenshots/player_profile.png) |
+<img width="1041" height="456" alt="Screenshot 2025-12-23 at 5 04 00 PM" src="https://github.com/user-attachments/assets/83ad60fb-464a-48cf-8401-09c6140744a4" />
 
-*(Note: Place your screenshots in a `screenshots` folder to match the path above)*
+<img width="1440" height="900" alt="Screenshot 2025-12-23 at 5 03 39 PM" src="https://github.com/user-attachments/assets/5f095b04-4e98-4e50-9e06-4d9c2cc5d7c6" />
+
+<img width="1440" height="900" alt="Screenshot 2025-12-23 at 5 03 57 PM" src="https://github.com/user-attachments/assets/3b7528a2-5e8a-478e-870f-aec9198054c1" />
+
 
 ## 🚀 How to Run
 
@@ -44,8 +45,3 @@ const CLIENT_ID = 'YOUR_GOOGLE_CLIENT_ID';
 ```
 Ensure this Client ID is authorized for your specific origin (e.g., `http://localhost:8080`) in the [Google Cloud Console](https://console.cloud.google.com/).
 
-## 🛠 Tech Stack
-
-- **Frontend**: HTML5, CSS3 (Flexbox, Animations)
-- **Scripting**: Vanilla JavaScript (ES6+), jQuery (used in Home page)
-- **Auth**: [Google Identity Services SDK](https://developers.google.com/identity/gsi/web/guides/overview)
