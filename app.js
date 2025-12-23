@@ -1,24 +1,36 @@
-const CLIENT_ID = '380325275782-6o2d2ab2ltcfiuph7o9garlplag578km.apps.googleusercontent.com';
-        
-window.onload = function() {
+const CLIENT_ID = '13607674284-qudqti9eilbfubpd9d3l2kiub5cne77l.apps.googleusercontent.com';
+
+window.onload = function () {
     google.accounts.id.initialize({
         client_id: CLIENT_ID,
         callback: handleLogin
     });
-            
+
     google.accounts.id.renderButton(
-    document.getElementById("buttonDiv"),
-    { theme: "outline", size: "medium" }
+        document.getElementById("buttonDiv"),
+        { theme: "outline", size: "medium" }
     );
-    };
-        
+};
+
 function handleLogin(response) {
     const user = parseJwt(response.credential);
 
+    // store user
     sessionStorage.setItem('googleUser', JSON.stringify(user));
 
-    window.location.href = 'home.html';
+    // hide login card
+    document.querySelector(".login-card").style.display = "none";
+
+    // show ENTER GAME screen
+    const enterScreen = document.getElementById("enterGameScreen");
+    enterScreen.classList.add("show");
+
+    // redirect after animation
+    setTimeout(() => {
+        window.location.href = 'homeGoogle.html';
+    }, 1600);
 }
+
 
 function parseJwt(token) {
     const base64Url = token.split('.')[1];

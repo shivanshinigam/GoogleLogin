@@ -1,21 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        .user-info img { width: 50px; height: 50px; border-radius: 50%; }
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .user-info img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
         .default-avatar {
-            width: 50px; height: 50px; border-radius: 50%;
-            background-color: #4caf50; color: white;
-            display: flex; align-items: center; justify-content: center;
-            font-weight: bold; font-size: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #4caf50;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
         }
     </style>
 </head>
+
 <body> 
     <h1>Welcome Home!</h1>
 
@@ -30,7 +47,7 @@
         const storedUser = sessionStorage.getItem('googleUser');
 
         if (!storedUser) {
-            window.location.href = 'index.html';
+            window.location.href = 'indexGoogle.html';
         } else {
             const user = JSON.parse(storedUser);
             $('#userName').text(user.name);
@@ -46,8 +63,9 @@
 
         function signOut() {
             sessionStorage.removeItem('googleUser');
-            window.location.href = 'index.html';
+            window.location.href = 'indexGoogle.html';
         }
     </script>
 </body>
+
 </html>
